@@ -1,0 +1,20 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <!-- Starts Edit Photo Section -->
+    <div class="edit-delete edit-photo">
+        <h2>Edit photo</h2>
+
+        <!-- Starts Edit Photo Form -->
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <!-- Edit Photo Button -->
+            <button class="edit-btn" type="submit">Edit Photo</button>
+        </form>
+        <!-- End Edit Photo Form -->
+
+    </div>
+    <!-- End Edit Photo Section -->
+
+{% endblock %}

@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'petstagram.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
+        "NAME": "petstagram",
         "USER": "myuser",
         "PASSWORD": "mypassword",
         "HOST": "127.0.0.1",

@@ -11,8 +11,8 @@ from petstagram.photos.models import Photo
 class HomePage(ListView):
     model = Photo
     template_name = 'common/home-page.html'
-    context_object_name = 'all_photos'  # by default is object_list and photos
-    paginate_by = 1
+    context_object_name = 'all_photos'
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -50,7 +50,6 @@ def likes_functionality(request, photo_id: int):
 
 def share_functionality(request, photo_id: int):
     copy(request.META.get('HTTP_HOST') + resolve_url('photo-details', photo_id))
-    # HTTP_HOST = http://127.0.0.1/   + photos/<int:pk>/ => http://127.0.0.1/photos/<int:pk>/
 
     return redirect(request.META.get('HTTP_REFERER') + f'#{photo_id}')
 
